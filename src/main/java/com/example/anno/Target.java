@@ -1,5 +1,8 @@
-package com.example.aop;
+package com.example.anno;
 
+import org.springframework.stereotype.Component;
+
+@Component("target")
 public class Target implements TargetInterface {
 
     /**

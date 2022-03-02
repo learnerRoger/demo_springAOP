@@ -18,8 +18,12 @@
 
     <aop:config>
         <aop:aspect ref="myAspect">
-            <aop:before method="before" pointcut="execution(public void com.example.aop.Target.save())"/>
-            <aop:after-returning method="afterReturning" pointcut="execution(public void com.example.aop.Target.save())"/>
+            <aop:pointcut id="myPointCut" expression="execution(* com.example.aop.*.*(..))"/>
+<!--            <aop:before method="before" pointcut="execution(* com.example.aop.*.*(..))"/>-->
+<!--            <aop:after-returning method="afterReturning" pointcut="execution(* com.example.aop.*.*(..))"/>-->
+            <aop:around method="around" pointcut-ref="myPointCut"/>
+            <aop:after-throwing method="afterThrowException" pointcut-ref="myPointCut"/>
+            <aop:after method="after" pointcut-ref="myPointCut"></aop:after>
         </aop:aspect>
     </aop:config>
 
