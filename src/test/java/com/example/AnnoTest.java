@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.anno.Target;
 import com.example.anno.TargetInterface;
 import org.junit.Test;
 import org.junit.runner.RunWith;
